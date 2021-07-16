@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DSFImageFlipbook",
+        "repositoryURL": "https://github.com/dagronf/DSFImageFlipbook",
+        "state": {
+          "branch": null,
+          "revision": "8b6e1e7f862c1d39ce34c59705f9fa731d9fd539",
+          "version": "1.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

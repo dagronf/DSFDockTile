@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19115.3"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="DockViewController" customModule="DSFDockTile_Demo" customModuleProvider="target">
+            <connections>
+                <outlet property="gradientArcView" destination="ewj-w3-RB3" id="laS-Z8-Z2U"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="ewj-w3-RB3" customClass="GradientArcView" customModule="DSFDockTile_Demo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                            <color key="value" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gPp-aj-4cJ">
+                    <rect key="frame" x="18" y="44" width="93" height="40"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="100%" id="vro-gr-hi4">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="percent" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="G0b-UQ-Su9">
+                            <integer key="multiplier" value="100"/>
+                        </numberFormatter>
+                        <font key="font" size="35" name="Menlo-Bold"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.value" id="CB8-QE-ehY"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ewj-w3-RB3" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Wfb-dg-gOD"/>
+                <constraint firstItem="gPp-aj-4cJ" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="Wj2-9b-5Am"/>
+                <constraint firstItem="gPp-aj-4cJ" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="bGo-5T-OYf"/>
+                <constraint firstItem="ewj-w3-RB3" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="cRz-P3-HYL"/>
+                <constraint firstAttribute="trailing" secondItem="ewj-w3-RB3" secondAttribute="trailing" id="p5Z-Fv-CbN"/>
+                <constraint firstAttribute="bottom" secondItem="ewj-w3-RB3" secondAttribute="bottom" id="sRu-sM-S3E"/>
+            </constraints>
+            <point key="canvasLocation" x="-36" y="77"/>
+        </customView>
+    </objects>
+</document>
