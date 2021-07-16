@@ -17,14 +17,14 @@ class AnimatedViewController: NSViewController {
 
 	let dockTile: DSFDockTile = {
 		let fb = DSFImageFlipbook()
-		let da = NSDataAsset(name: NSDataAsset.Name("shark"))!
+		let da = NSDataAsset(name: NSDataAsset.Name("animate-shark"))!
 		_ = fb.loadFrames(from: da.data)
 		return DSFDockTile(fb)
 	}()
 
 	let charizard: DSFDockTile = {
 		let fb = DSFImageFlipbook()
-		let da = NSDataAsset(name: NSDataAsset.Name("animated"))!
+		let da = NSDataAsset(name: NSDataAsset.Name("animate-charizard"))!
 		_ = fb.loadFrames(from: da.data)
 		return DSFDockTile(fb)
 	}()
@@ -90,7 +90,30 @@ class AnimatedViewController: NSViewController {
 		default: fatalError()
 		}
 	}
+}
 
+extension AnimatedViewController {
+	@IBAction func selectNewGIF(_ sender: Any) {
+		let myOpen = NSOpenPanel()
+		myOpen.allowedFileTypes = ["com.compuserve.gif"]
+		myOpen.canChooseFiles = true
+		myOpen.allowsMultipleSelection = false
+		myOpen.beginSheetModal(for: self.view.window!) { [weak self] response in
+			if response == .OK {
+				DispatchQueue.main.async { [weak self] in
+					self?.imageChanged(from: myOpen.url!)
+				}
+			}
+		}
+	}
 
-
+	func imageChanged(from url: URL) {
+		guard let image = NSImage(contentsOf: url) else { return }
+		let fb = DSFImageFlipbook()
+		_ = fb.loadFrames(from: image)
+		if fb.frameCount > 0 {
+			selectedDockImage = DSFDockTile(fb)
+			selectedDockImage.display()
+		}
+	}
 }

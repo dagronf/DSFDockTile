@@ -17,11 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqc-vi-lRM">
-                    <rect key="frame" x="20" y="107" width="440" height="145"/>
+                <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="30" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqc-vi-lRM">
+                    <rect key="frame" x="20" y="87" width="440" height="165"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="oAx-W1-BT9">
-                            <rect key="frame" x="-2" y="109" width="444" height="36"/>
+                            <rect key="frame" x="-2" y="129" width="444" height="36"/>
                             <textFieldCell key="cell" allowsUndo="NO" id="eee-Zz-utJ">
                                 <font key="font" textStyle="body" name=".SFNS-Regular"/>
                                 <string key="title">The docktile is being generated as an animation using the DSFImageFlipbook package, loading the frames directly from a GIF file.</string>
@@ -29,24 +29,52 @@
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D7J-QL-adV">
-                            <rect key="frame" x="144" y="66" width="153" height="24"/>
-                            <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="texturedRounded" trackingMode="selectOne" id="KTD-n0-Aio">
-                                <font key="font" metaFont="system"/>
-                                <segments>
-                                    <segment label="Shark" width="72" selected="YES"/>
-                                    <segment label="Charizard" width="72" tag="1"/>
-                                </segments>
-                            </segmentedCell>
-                            <connections>
-                                <action selector="imageChanged:" target="-2" id="rXU-m4-qcz"/>
-                                <binding destination="-2" name="enabled" keyPath="self.isAnimating" id="q6D-oJ-Aog">
-                                    <dictionary key="options">
-                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                    </dictionary>
-                                </binding>
-                            </connections>
-                        </segmentedControl>
+                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tzm-eQ-9nf">
+                            <rect key="frame" x="96" y="77" width="249" height="22"/>
+                            <subviews>
+                                <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D7J-QL-adV">
+                                    <rect key="frame" x="-2" y="-1" width="153" height="24"/>
+                                    <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="texturedRounded" trackingMode="selectOne" id="KTD-n0-Aio">
+                                        <font key="font" metaFont="system"/>
+                                        <segments>
+                                            <segment label="Shark" width="72" selected="YES"/>
+                                            <segment label="Charizard" width="72" tag="1"/>
+                                        </segments>
+                                    </segmentedCell>
+                                    <connections>
+                                        <action selector="imageChanged:" target="-2" id="rXU-m4-qcz"/>
+                                        <binding destination="-2" name="enabled" keyPath="self.isAnimating" id="q6D-oJ-Aog">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </segmentedControl>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oqf-ak-Crs">
+                                    <rect key="frame" x="150" y="-6" width="106" height="32"/>
+                                    <buttonCell key="cell" type="push" title="Select GIF…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MND-TZ-BA4">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="selectNewGIF:" target="-2" id="t49-vX-NZr"/>
+                                        <binding destination="-2" name="enabled" keyPath="self.isAnimating" id="sRb-IR-45m">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
                         <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jYm-sg-GXD">
                             <rect key="frame" x="0.0" y="0.0" width="440" height="47"/>
                             <subviews>
