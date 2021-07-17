@@ -23,6 +23,9 @@
 		2321A57B26A16928003C94F8 /* DSFDockTile in Frameworks */ = {isa = PBXBuildFile; productRef = 2321A57A26A16928003C94F8 /* DSFDockTile */; };
 		235933D626A28D58002258AB /* AttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235933D426A28D58002258AB /* AttentionViewController.swift */; };
 		235933D726A28D58002258AB /* AttentionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235933D526A28D58002258AB /* AttentionViewController.xib */; };
+		235933DD26A2AEF9002258AB /* DockTile+SecondaryWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235933DC26A2AEF9002258AB /* DockTile+SecondaryWindow.swift */; };
+		235933E026A2B092002258AB /* WindowedDockTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235933DE26A2B092002258AB /* WindowedDockTileViewController.swift */; };
+		235933E126A2B092002258AB /* WindowedDockTileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235933DF26A2B092002258AB /* WindowedDockTileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		235933D426A28D58002258AB /* AttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionViewController.swift; sourceTree = "<group>"; };
 		235933D526A28D58002258AB /* AttentionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttentionViewController.xib; sourceTree = "<group>"; };
 		235933D826A29757002258AB /* DSFDockTile Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DSFDockTile Demo.entitlements"; sourceTree = "<group>"; };
+		235933DC26A2AEF9002258AB /* DockTile+SecondaryWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DockTile+SecondaryWindow.swift"; sourceTree = "<group>"; };
+		235933DE26A2B092002258AB /* WindowedDockTileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowedDockTileViewController.swift; sourceTree = "<group>"; };
+		235933DF26A2B092002258AB /* WindowedDockTileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WindowedDockTileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		2321A54F26A13BF5003C94F8 /* DSFDockTile Demo */ = {
 			isa = PBXGroup;
 			children = (
+				235933D926A2AE68002258AB /* window-based */,
 				235933D826A29757002258AB /* DSFDockTile Demo.entitlements */,
 				2321A55026A13BF5003C94F8 /* AppDelegate.swift */,
 				2321A55226A13BF6003C94F8 /* Assets.xcassets */,
@@ -104,6 +111,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		235933D926A2AE68002258AB /* window-based */ = {
+			isa = PBXGroup;
+			children = (
+				235933DC26A2AEF9002258AB /* DockTile+SecondaryWindow.swift */,
+				235933DE26A2B092002258AB /* WindowedDockTileViewController.swift */,
+				235933DF26A2B092002258AB /* WindowedDockTileViewController.xib */,
+			);
+			path = "window-based";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +191,7 @@
 				2321A57026A15194003C94F8 /* NSInfoViewController.xib in Resources */,
 				2321A57326A15299003C94F8 /* DockViewController.xib in Resources */,
 				2321A55326A13BF6003C94F8 /* Assets.xcassets in Resources */,
+				235933E126A2B092002258AB /* WindowedDockTileViewController.xib in Resources */,
 				2321A56326A13E15003C94F8 /* AnimatedViewController.xib in Resources */,
 				2321A55F26A13E07003C94F8 /* ImageViewController.xib in Resources */,
 				2321A55626A13BF6003C94F8 /* MainMenu.xib in Resources */,
@@ -190,6 +208,8 @@
 				2321A56626A13E26003C94F8 /* XIBViewController.swift in Sources */,
 				2321A56F26A15194003C94F8 /* NSInfoViewController.swift in Sources */,
 				2321A55E26A13E07003C94F8 /* ImageViewController.swift in Sources */,
+				235933E026A2B092002258AB /* WindowedDockTileViewController.swift in Sources */,
+				235933DD26A2AEF9002258AB /* DockTile+SecondaryWindow.swift in Sources */,
 				2321A55126A13BF5003C94F8 /* AppDelegate.swift in Sources */,
 				235933D626A28D58002258AB /* AttentionViewController.swift in Sources */,
 				2321A57426A15299003C94F8 /* DockViewController.swift in Sources */,

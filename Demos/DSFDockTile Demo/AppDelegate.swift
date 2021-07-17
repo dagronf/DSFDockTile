@@ -35,6 +35,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
 
+		OpenNewSubWindow()
+
+
 		tabView.addTabViewItem(infoTC)
 		tabView.addTabViewItem(imageTC)
 		tabView.addTabViewItem(animatedTC)
@@ -44,6 +47,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		self.window.toolbar?.selectedItemIdentifier = NSToolbarItem.Identifier("Toolbar-Info")
 
 		tabView.selectTabViewItem(infoTC)
+
+		self.window.makeKeyAndOrderFront(self)
 
 	}
 

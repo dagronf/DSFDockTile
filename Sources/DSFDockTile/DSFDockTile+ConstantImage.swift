@@ -50,6 +50,9 @@ extension DSFDockTile {
 		public init(_ image: NSImage,	dockTile: NSDockTile = NSApp.dockTile) {
 			self.image = image
 			super.init(dockTile: dockTile)
+
+			// Set the image
+			self._imageDisplayView.image = image
 		}
 
 		// Present the stored image
@@ -62,16 +65,10 @@ extension DSFDockTile {
 
 			let imageView = self._imageDisplayView
 
-			// Get the view to draw the image
-			if tile.contentView !== self._imageDisplayView {
+			// If we aren't already being displayed, then make sure to update the content view
+			if tile.contentView !== imageView {
 				tile.contentView = imageView
 			}
-
-			// Update the image view with the new image
-			CATransaction.begin()
-			CATransaction.setDisableActions(true)
-			imageView.layer?.contents = self.image
-			CATransaction.commit()
 
 			// And update the docktile display
 			tile.display()

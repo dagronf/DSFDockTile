@@ -69,13 +69,13 @@ extension DSFDockTile {
 
 			let imageView = self._imageDisplayView
 
-			// Get the view to draw the image
+			// Update the image view with the new image
+			imageView.image = nsImage
+
+			// If we aren't already being displayed, then make sure to update the content view
 			if tile.contentView !== imageView {
 				tile.contentView = imageView
 			}
-
-			// Update the image view with the new image
-			imageView.image = nsImage
 
 			// And update the docktile display
 			tile.display()

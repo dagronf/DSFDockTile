@@ -50,6 +50,11 @@ extension DSFDockTile {
 extension DSFDockTile {
 	/// A docktile object that displays the default docktile content.
 	public class AppIconType: BaseType {
+
+		public override init(dockTile: NSDockTile = NSApp.dockTile) {
+			super.init(dockTile: dockTile)
+		}
+
 		public func display() {
 			if let tile = self.dockTile {
 				tile.contentView = nil
