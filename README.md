@@ -10,7 +10,7 @@ A helper wrapper around NSDockTile and docktile-related functions.
     <a href="https://swift.org/package-manager">
         <img src="https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat" alt="Swift Package Manager" /></a>
 </p>
-<p align="center">
+
 ![](https://github.com/dagronf/dagronf.github.io/blob/master/art/projects/DSFDockTile/stitch.gif?raw=true)
 
 ## Why?
@@ -21,8 +21,6 @@ Reading some of the comments I realised that there seemed to be a lot of folks w
 
 While the NSDockTile API isn't overly complex, I wanted something that made it easy to change the dock image, and even add basic animations from GIF images etc.
 
-By default an `DSFDockTile` instance operates on the Application docktile. You can provide your own `NSDockTile` for any window (`window.dockTile`) 	 via the `init` functions
-
 ## Features
 
 * Set the badge label
@@ -30,6 +28,8 @@ By default an `DSFDockTile` instance operates on the Application docktile. You c
 * Display an animated image
 * Display the content of an NSView
 * Bounce the docktile 
+
+By default an `DSFDockTile` instance operates on the Application docktile. You can provide your own `NSDockTile` for any window (`window.dockTile`) via the `init` functions on the badge generators.
 
 ## Integration
 
@@ -158,7 +158,7 @@ You can request user information via the DockTile of an application if your appl
 
 See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/1428358-requestuserattention) for more details.
 
-#### requestInformationalAttention()
+### requestInformationalAttention()
 
 Request that the docktile 'bounce' to inform the user of something informational. The function returns an object which you can use to cancel the attention request.
 
@@ -166,9 +166,11 @@ Request that the docktile 'bounce' to inform the user of something informational
 let cancellable = DSFDockTile.requestInformationalAttention()
 ```
 
+The `cancellable` can be used to cancel the information request.
+
 See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/requestuserattentiontype/criticalrequest)
 
-#### requestCriticalAttention()
+### requestCriticalAttention()
 
 Request that the docktile 'bounce' to inform the user of something informational. The function returns an object which you can use to cancel the attention request.
 
@@ -176,15 +178,13 @@ Request that the docktile 'bounce' to inform the user of something informational
 let cancellable = DSFDockTile.requestCriticalAttention()
 ```
 
+The `cancellable` can be used to cancel the critical request.
+
 See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/requestuserattentiontype/informationalrequest)
 
-#### Cancellation object (DSFDockTileUserAttentionCancellation)
+### Cancellation protocol (DSFDockTileUserAttentionCancellation)
 
-The user attention methods return an object that can be used to cancel an attention request.
-
-```swift
-DSFDockTileUserAttentionCancellation
-```
+The user attention methods return an object that conforms to `DSFDockTileUserAttentionCancellation` that can be used to cancel an attention request.
 
 See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/1428683-canceluserattentionrequest)
 
