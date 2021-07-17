@@ -5,17 +5,61 @@ A helper wrapper around NSDockTile and docktile-related functions.
 <p align="center">
     <img src="https://img.shields.io/github/v/tag/dagronf/DSFDockTile" />
     <img src="https://img.shields.io/badge/macOS-10.11+-red" />
-    <img src="https://img.shields.io/badge/Swift-5.0-orange.svg" />
+    <img src="https://img.shields.io/badge/Swift-5.2-orange.svg" />
     <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
     <a href="https://swift.org/package-manager">
         <img src="https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat" alt="Swift Package Manager" /></a>
 </p>
+<p align="center">
+![](https://github.com/dagronf/dagronf.github.io/blob/master/art/projects/DSFDockTile/stitch.gif?raw=true)
 
-## DockTile Concepts
+## Why?
+
+I was inspired by [Neil Sardesai](https://twitter.com/neilsardesai) after he posted [this on Twitter](https://twitter.com/neilsardesai/status/1362179114204073984?s=20). And this marvellous follow-up tweet by [Norbert M. Doerner](https://twitter.com/cdfinder/status/1365201157854015488?s=20).
+
+Reading some of the comments I realised that there seemed to be a lot of folks who weren't aware that there has been a DockTile API available through AppKit which allows you to play around with the docktile content.
+
+While the NSDockTile API isn't overly complex, I wanted something that made it easy to change the dock image, and even add basic animations from GIF images etc.
+
+By default an `DSFDockTile` instance operates on the Application docktile. You can provide your own `NSDockTile` for any window (`window.dockTile`) 	 via the `init` functions
+
+## Features
+
+* Set the badge label
+* Display an image
+* Display an animated image
+* Display the content of an NSView
+* Bounce the docktile 
+
+## Integration
+
+### Swift package manager
+
+Add `https://github.com/dagronf/DSFDockTile` to your project.
+
+If you don't want to include the `DSFImageFlipbook` package, copy all the files in the `Sources/` folder **EXCEPT** for `DSFDockTile+Animation.swift`.
+
+### Demo
+
+There is a demo macOS application available in the `Demos` subfolder.
+
+## Badge Label
+
+It's very easy to add a badge label to a docktile.
+
+```swift
+// Set the label on the docktile to 1234
+DSFDockTile.badgeLabel = "1234"
+
+// Remove the badge label from the docktile
+DSFDockTile.badgeLabel = nil
+```
+
+## DockTile Generators
 
 ### AppIcon
 
-Set the dock icon to the application's icon
+Set the docktile to the application's icon.
 
 ```swift
 // Set the dock icon to the application icon
@@ -110,11 +154,9 @@ let animatedDockTile: DSFDockTile.Animated = {
 
 ## Attention Concepts
 
-You can request user information via the DockTile of an application by using 
+You can request user information via the DockTile of an application if your application is not the front-most application.
 
-### User Attention
-
-Methods for requesting attention from a user. See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/1428358-requestuserattention) for more details.
+See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/1428358-requestuserattention) for more details.
 
 #### requestInformationalAttention()
 
@@ -146,126 +188,10 @@ DSFDockTileUserAttentionCancellation
 
 See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/1428683-canceluserattentionrequest)
 
-
-
-
-## Integration
-
-There are demos available in the `Demos` subfolder.
-
-#### Swift package manager
-
-Add `https://github.com/dagronf/DSFDockTile` to your project.
-
-
-## API
-
-### Core
-
-#### Init with application dock tile
-
-Create a docktile helper for the current application's dock tile.
-
-```swift
-init()
-```
-
-#### Init with window dock tile
-
-Create a docktile helper for the specified window's dock tile
-
-```swift
-init(window: NSWindow)
-```
-
-#### Init with a dock tile
-
-Create a docktile helper for the specified docktile
-
-```swift
-init(dockTile: NSDockTile)
-```
-
-### Badges
-
-#### badgeLabel
-
-Set the label to be displayed on the dock tile. Set to `nil` to remove a badge
-
-```swift
-var badgeLabel: String?
-```
-
-#### showsApplicationBadge
-
-Sets whether or not the dock tile should be badged with the application icon.
-
-```swift
-var showsApplicationBadge: Bool
-```
-
-### View Content
-
-#### contentView
-
-Set a view to be displayed in the dock tile. 
-
-```swift
-var contentView: NSView?
-```
-
-
-Due to NSDockTile restrictions, the view is not drawn live into the dock, you must call `display()` to update the dock tile with the view's current content whenever a change occurs in the view.
-
-### Image Content
-
-#### image
-
-Set an image to be displayed as the dock tile. Set to nil to remove the image.
-
-```swift
-var image: CGImage?
-```
-
-### User Attention
-
-Methods for requesting attention from a user. See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/1428358-requestuserattention) for more details.
-
-#### requestInformationalAttention()
-
-Request that the docktile 'bounce' to inform the user of something informational. The function returns an object which you can use to cancel the attention request.
-
-```swift
-func requestInformationalAttention() -> DSFDockTileUserAttentionCancellation
-```
-
-See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/requestuserattentiontype/criticalrequest)
-
-#### requestCriticalAttention()
-
-Request that the docktile 'bounce' to inform the user of something informational. The function returns an object which you can use to cancel the attention request.
-
-```swift
-func requestCriticalAttention() -> DSFDockTileUserAttentionCancellation
-```
-
-See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/requestuserattentiontype/informationalrequest)
-
-#### Cancellation object (DSFDockTileUserAttentionCancellation)
-
-The user attention methods return an object that can be used to cancel an attention request.
-
-```swift
-DSFDockTileUserAttentionCancellation
-```
-
-See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsapplication/1428683-canceluserattentionrequest)
-
 ## Thanks
 
-The images (light/dark) in the demo application are thanks to [brgfx on freepix](https://www.freepik.com/free-vector/opposite-adjectives-light-dark_1172843.htm)
-
-Attribution - <a href="https://www.freepik.com/vectors/background">Background vector created by brgfx - www.freepik.com</a>
+* [Neil Sardesai](https://twitter.com/neilsardesai)
+* [Norbert M. Doerner](https://twitter.com/cdfinder)
 
 ## License
 
