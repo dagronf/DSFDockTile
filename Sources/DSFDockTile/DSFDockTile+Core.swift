@@ -1,5 +1,5 @@
 //
-//  DSFDockTile.swift
+//  DSFDockTile+Core.swift
 //  DSFDockTile
 //
 //  Created by Darren Ford on 17/7/21
@@ -27,22 +27,35 @@
 
 import AppKit
 
-public class DSFDockTile {
-	/// A docktile that represents the current application's icon
-	public static let AppIcon = DSFDockTile.AppIconType()
+extension DSFDockTile {
 
-	/// Set the badge label to be displayed on the application's docktile
-	public static var badgeLabel: String? {
-		get {
-			NSApp.dockTile.badgeLabel
-		}
-		set {
-			NSApp.dockTile.badgeLabel = newValue
-		}
-	}
+	/// Base type for a docktile. Can only be inherited from
+	public class BaseType {
+		// The docktile to update. By default, this is the App Icon
+		internal weak var dockTile: NSDockTile?
 
-	/// Set the badge label to be displayed on a provided docktile
-	@inlinable public static func setBadgeLabel(_ label: String?, dockTile: NSDockTile = NSApp.dockTile) {
-		dockTile.badgeLabel = label
+		/// Set the docktile badge label
+		public var badgeLabel: String? {
+			didSet {
+				self.dockTile?.badgeLabel = self.badgeLabel
+			}
+		}
+
+		internal init(dockTile: NSDockTile = NSApp.dockTile) {
+			self.dockTile = dockTile
+		}
 	}
 }
+
+extension DSFDockTile {
+	/// A docktile object that displays the default docktile content.
+	public class AppIconType: BaseType {
+		public func display() {
+			if let tile = self.dockTile {
+				tile.contentView = nil
+				tile.display()
+			}
+		}
+	}
+}
+

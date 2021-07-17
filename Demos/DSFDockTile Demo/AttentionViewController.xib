@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19115.3"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AttentionViewController" customModule="DSFDockTile_Demo" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="349"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="33" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7eI-S2-JCa">
+                    <rect key="frame" x="20" y="68" width="440" height="261"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="fuW-yX-pO6">
+                            <rect key="frame" x="-2" y="81" width="444" height="180"/>
+                            <textFieldCell key="cell" allowsUndo="NO" id="IHE-uC-Yfb">
+                                <font key="font" textStyle="body" name=".SFNS-Regular"/>
+                                <string key="title">You can 'bounce' an application icon in the dock.  The 'bounce' only occurs IF the application is not the focus application on the system.
+
+To demonstrate this, clicking either of the two buttons below will open the 'System Preferences' application in order to de-focus this demo application.
+
+Informational: The dock icon will bounce for one second.
+Critical: The dock icon will bounce until either the app becomes active or the request is canceled.</string>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vTd-Cs-22p">
+                            <rect key="frame" x="96" y="0.0" width="248" height="48"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eAs-nG-2cT">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="120" id="4qH-Xo-tMD"/>
+                                        <constraint firstAttribute="height" constant="48" id="R0g-xL-V4c"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="Informational" bezelStyle="shadowlessSquare" imagePosition="above" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LFA-bE-gFV">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="informationalRequest:" target="-2" id="cCq-As-9Zn"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GTb-gN-0N8">
+                                    <rect key="frame" x="128" y="0.0" width="120" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="XFS-1W-5OQ"/>
+                                        <constraint firstAttribute="width" constant="120" id="q6i-I6-SQA"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="Critical" bezelStyle="shadowlessSquare" imagePosition="above" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="diN-Fb-gKT">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="criticalRequest:" target="-2" id="ZLM-8y-TL4"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="7eI-S2-JCa" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="0MC-0d-6dZ"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7eI-S2-JCa" secondAttribute="bottom" constant="20" symbolic="YES" id="GZW-OB-fjw"/>
+                <constraint firstItem="7eI-S2-JCa" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="Psy-4Z-23B"/>
+                <constraint firstAttribute="trailing" secondItem="7eI-S2-JCa" secondAttribute="trailing" constant="20" symbolic="YES" id="h5B-6E-4QW"/>
+            </constraints>
+            <point key="canvasLocation" x="92" y="23.5"/>
+        </customView>
+    </objects>
+</document>

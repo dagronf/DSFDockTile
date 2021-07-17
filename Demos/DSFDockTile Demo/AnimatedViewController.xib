@@ -14,15 +14,15 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="287"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="30" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqc-vi-lRM">
-                    <rect key="frame" x="20" y="87" width="440" height="165"/>
+                    <rect key="frame" x="20" y="102" width="440" height="165"/>
                     <subviews>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="oAx-W1-BT9">
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="100" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAx-W1-BT9">
                             <rect key="frame" x="-2" y="129" width="444" height="36"/>
-                            <textFieldCell key="cell" allowsUndo="NO" id="eee-Zz-utJ">
+                            <textFieldCell key="cell" enabled="NO" allowsUndo="NO" id="eee-Zz-utJ">
                                 <font key="font" textStyle="body" name=".SFNS-Regular"/>
                                 <string key="title">The docktile is being generated as an animation using the DSFImageFlipbook package, loading the frames directly from a GIF file.</string>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>

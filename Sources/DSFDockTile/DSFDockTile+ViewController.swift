@@ -1,5 +1,5 @@
 //
-//  DSFDockTile.swift
+//  DSFDockTile+ViewController.swift
 //  DSFDockTile
 //
 //  Created by Darren Ford on 17/7/21
@@ -27,22 +27,39 @@
 
 import AppKit
 
-public class DSFDockTile {
-	/// A docktile that represents the current application's icon
-	public static let AppIcon = DSFDockTile.AppIconType()
+extension DSFDockTile {
 
-	/// Set the badge label to be displayed on the application's docktile
-	public static var badgeLabel: String? {
-		get {
-			NSApp.dockTile.badgeLabel
-		}
-		set {
-			NSApp.dockTile.badgeLabel = newValue
-		}
-	}
+	/// Display the content of a view as a dock tile
+	public class View: BaseType {
 
-	/// Set the badge label to be displayed on a provided docktile
-	@inlinable public static func setBadgeLabel(_ label: String?, dockTile: NSDockTile = NSApp.dockTile) {
-		dockTile.badgeLabel = label
+		/// The view controller
+		internal weak var viewController: NSViewController?
+
+		/// Create an instance which uses a view as the content of a docktile
+		/// - Parameters:
+		///   - viewController: The viewController handling the view being displayed in the dock tile. This parameter is weakly held by this object, so it's important to make sure you hold onto this view controller outside the instance
+		///   - dockTile: The docktile to update. By default, updates the application docktile.
+		public init(_ viewController: NSViewController, dockTile: NSDockTile = NSApp.dockTile) {
+			self.viewController = viewController
+			super.init(dockTile: dockTile)
+		}
+
+		// Set view as docktile
+		public func display() {
+			precondition(Thread.isMainThread)
+
+			guard let tile = self.dockTile,
+					let vc = self.viewController else {
+				return
+			}
+
+			// Make sure the docktile is showing our view
+			if tile.contentView !== vc.view {
+				tile.contentView = vc.view
+			}
+
+			// And update the docktile display
+			tile.display()
+		}
 	}
 }

@@ -6,11 +6,19 @@
 //
 
 import Cocoa
+import DSFDockTile
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 	@IBOutlet var window: NSWindow!
+
+	@objc dynamic var badgeLabel: String? {
+		didSet {
+			DSFDockTile.badgeLabel = self.badgeLabel
+		}
+	}
+
 	@IBOutlet weak var tabView: NSTabView!
 
 	let infoVC = NSInfoViewController()
@@ -21,7 +29,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	lazy var animatedTC: NSTabViewItem = { NSTabViewItem(viewController: animatedVC) }()
 	let xibVC = XIBViewController()
 	lazy var xibTC: NSTabViewItem = { NSTabViewItem(viewController: xibVC) }()
-
+	let attentionVC = AttentionViewController()
+	lazy var attentionTC: NSTabViewItem = { NSTabViewItem(viewController: attentionVC) }()
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
@@ -30,6 +39,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		tabView.addTabViewItem(imageTC)
 		tabView.addTabViewItem(animatedTC)
 		tabView.addTabViewItem(xibTC)
+		tabView.addTabViewItem(attentionTC)
+
+		self.window.toolbar?.selectedItemIdentifier = NSToolbarItem.Identifier("Toolbar-Info")
 
 		tabView.selectTabViewItem(infoTC)
 
@@ -49,6 +61,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		case 0: tabView.selectTabViewItem(imageTC)
 		case 1: tabView.selectTabViewItem(animatedTC)
 		case 2: tabView.selectTabViewItem(xibTC)
+		case 3: tabView.selectTabViewItem(attentionTC)
 		default: fatalError()
 		}
 	}

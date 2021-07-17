@@ -18,36 +18,49 @@
             <rect key="frame" x="0.0" y="0.0" width="479" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="ayF-Q5-voa">
-                    <rect key="frame" x="18" y="162" width="443" height="90"/>
-                    <textFieldCell key="cell" allowsUndo="NO" id="5o3-Vx-aZa">
-                        <font key="font" textStyle="body" name=".SFNS-Regular"/>
-                        <string key="title">The docktile is being generated from the content in DockViewController.  Drag the slider and change the color to see the DockTile dynamically update as the value changes </string>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="scB-da-fw7">
-                    <rect key="frame" x="20" y="122" width="439" height="32"/>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y3N-n2-nL4">
+                    <rect key="frame" x="20" y="114" width="439" height="138"/>
                     <subviews>
-                        <slider verticalHuggingPriority="750" horizontalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="CUH-y2-jXO">
-                            <rect key="frame" x="-2" y="0.0" width="371" height="28"/>
-                            <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.66000000000000003" tickMarkPosition="above" sliderType="linear" id="eg9-bA-ouL"/>
-                            <connections>
-                                <action selector="sliderDidUpdate:" target="-2" id="MU9-KL-gbC"/>
-                            </connections>
-                        </slider>
-                        <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="q6T-KL-OWs">
-                            <rect key="frame" x="375" y="0.0" width="64" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="32" id="NmL-FW-QZe"/>
-                                <constraint firstAttribute="width" constant="64" id="kSX-CU-4VY"/>
-                            </constraints>
-                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="colorDidUpdate:" target="-2" id="Qq6-W9-QkS"/>
-                            </connections>
-                        </colorWell>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="999" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="999" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayF-Q5-voa">
+                            <rect key="frame" x="-2" y="48" width="443" height="90"/>
+                            <textFieldCell key="cell" enabled="NO" allowsUndo="NO" id="5o3-Vx-aZa">
+                                <font key="font" textStyle="body" name=".SFNS-Regular"/>
+                                <string key="title">The docktile is being generated from the content in DockViewController.  Drag the slider and change the color to see the DockTile dynamically update as the value changes </string>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="scB-da-fw7">
+                            <rect key="frame" x="0.0" y="0.0" width="439" height="32"/>
+                            <subviews>
+                                <slider verticalHuggingPriority="750" horizontalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="CUH-y2-jXO">
+                                    <rect key="frame" x="-2" y="0.0" width="371" height="28"/>
+                                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.66000000000000003" tickMarkPosition="above" sliderType="linear" id="eg9-bA-ouL"/>
+                                    <connections>
+                                        <action selector="sliderDidUpdate:" target="-2" id="MU9-KL-gbC"/>
+                                    </connections>
+                                </slider>
+                                <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="q6T-KL-OWs">
+                                    <rect key="frame" x="375" y="0.0" width="64" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="NmL-FW-QZe"/>
+                                        <constraint firstAttribute="width" constant="64" id="kSX-CU-4VY"/>
+                                    </constraints>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="colorDidUpdate:" target="-2" id="Qq6-W9-QkS"/>
+                                    </connections>
+                                </colorWell>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
                     </subviews>
                     <visibilityPriorities>
                         <integer value="1000"/>
@@ -60,12 +73,10 @@
                 </stackView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="ayF-Q5-voa" secondAttribute="trailing" constant="20" symbolic="YES" id="NeW-BN-gzr"/>
-                <constraint firstItem="scB-da-fw7" firstAttribute="top" secondItem="ayF-Q5-voa" secondAttribute="bottom" constant="8" symbolic="YES" id="PaO-kN-ZKW"/>
-                <constraint firstItem="scB-da-fw7" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="U2p-zr-SHH"/>
-                <constraint firstItem="ayF-Q5-voa" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="drn-bB-xtj"/>
-                <constraint firstItem="ayF-Q5-voa" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="jQY-SX-fDw"/>
-                <constraint firstAttribute="trailing" secondItem="scB-da-fw7" secondAttribute="trailing" constant="20" symbolic="YES" id="zn7-Cb-ZKN"/>
+                <constraint firstItem="y3N-n2-nL4" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="EQn-Gu-6zl"/>
+                <constraint firstAttribute="trailing" secondItem="y3N-n2-nL4" secondAttribute="trailing" constant="20" symbolic="YES" id="JC6-Sl-NV6"/>
+                <constraint firstItem="y3N-n2-nL4" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="axi-pW-NEz"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="y3N-n2-nL4" secondAttribute="bottom" constant="20" symbolic="YES" id="rYL-8T-kfv"/>
             </constraints>
             <point key="canvasLocation" x="82.5" y="154"/>
         </customView>

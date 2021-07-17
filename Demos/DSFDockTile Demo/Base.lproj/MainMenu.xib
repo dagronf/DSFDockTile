@@ -685,41 +685,96 @@
         <window title="DSFDockTile Demo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" toolbarStyle="preference" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="523" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+            <view key="contentView" misplaced="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="523" height="369"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <tabView type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-Ue-jmw">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                        <font key="font" metaFont="system"/>
-                        <tabViewItems>
-                            <tabViewItem label="Tab" identifier="" id="wDg-MU-N3i">
-                                <view key="view" id="f0z-Lt-nLv">
-                                    <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                            </tabViewItem>
-                            <tabViewItem label="View" identifier="" id="zkn-Mv-2fi">
-                                <view key="view" id="cOX-Ql-rJV">
-                                    <rect key="frame" x="0.0" y="0.0" width="483" height="360"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                            </tabViewItem>
-                        </tabViewItems>
-                    </tabView>
+                    <stackView distribution="fillProportionally" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VdQ-YZ-inp">
+                        <rect key="frame" x="0.0" y="8" width="523" height="361"/>
+                        <subviews>
+                            <tabView horizontalHuggingPriority="100" verticalHuggingPriority="100" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-Ue-jmw">
+                                <rect key="frame" x="0.0" y="38" width="523" height="323"/>
+                                <font key="font" metaFont="system"/>
+                                <tabViewItems>
+                                    <tabViewItem label="Tab" identifier="" id="wDg-MU-N3i">
+                                        <view key="view" id="f0z-Lt-nLv">
+                                            <rect key="frame" x="0.0" y="0.0" width="523" height="323"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="View" identifier="" id="zkn-Mv-2fi">
+                                        <view key="view" id="cOX-Ql-rJV">
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="321"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                    </tabViewItem>
+                                </tabViewItems>
+                            </tabView>
+                            <box horizontalHuggingPriority="10" verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="M4S-Vx-Ewe">
+                                <rect key="frame" x="0.0" y="27" width="523" height="5"/>
+                            </box>
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="100" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sJT-1g-VsV">
+                                <rect key="frame" x="0.0" y="0.0" width="523" height="21"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qDs-NZ-dkx">
+                                        <rect key="frame" x="18" y="3" width="93" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="DockTile Label" id="xdE-LE-ivc">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="10" verticalHuggingPriority="750" horizontalCompressionResistancePriority="10" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBP-0o-9Hm">
+                                        <rect key="frame" x="117" y="0.0" width="386" height="21"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Label to display on the application docktile" drawsBackground="YES" id="TPb-J6-4hD">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="Voe-Tx-rLC" name="value" keyPath="self.badgeLabel" id="AlH-oV-DhR">
+                                                <dictionary key="options">
+                                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <edgeInsets key="edgeInsets" left="20" right="20" top="0.0" bottom="0.0"/>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <visibilityPriorities>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                        </visibilityPriorities>
+                        <customSpacing>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                        </customSpacing>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="mSZ-Ue-jmw" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="BWS-YV-auX"/>
-                    <constraint firstItem="mSZ-Ue-jmw" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="N8h-nf-J2v"/>
-                    <constraint firstAttribute="trailing" secondItem="mSZ-Ue-jmw" secondAttribute="trailing" id="d5X-R3-2dE"/>
-                    <constraint firstAttribute="bottom" secondItem="mSZ-Ue-jmw" secondAttribute="bottom" id="dNi-wg-MGx"/>
+                    <constraint firstAttribute="trailing" secondItem="VdQ-YZ-inp" secondAttribute="trailing" id="HV8-X5-Wfc"/>
+                    <constraint firstItem="VdQ-YZ-inp" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="dm3-SZ-eZ2"/>
+                    <constraint firstItem="VdQ-YZ-inp" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="iAz-YQ-Uxk"/>
+                    <constraint firstAttribute="bottom" secondItem="VdQ-YZ-inp" secondAttribute="bottom" constant="8" id="kuz-xW-mZq"/>
                 </constraints>
             </view>
             <toolbar key="toolbar" implicitIdentifier="0E2CDC00-52EB-4B4B-81C6-F2214221C788" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="uyW-RK-nyz">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="77E4F23A-F648-41CD-9208-67820E5719DD" label="Info" paletteLabel="Info" tag="-1" image="info.circle" catalog="system" sizingBehavior="auto" selectable="YES" id="Z6P-zv-YSL">
+                    <toolbarItem implicitItemIdentifier="77E4F23A-F648-41CD-9208-67820E5719DD" explicitItemIdentifier="Toolbar-Info" label="Info" paletteLabel="Info" tag="-1" image="info.circle" catalog="system" sizingBehavior="auto" selectable="YES" id="Z6P-zv-YSL">
                         <connections>
                             <action selector="tabChanged:" target="Voe-Tx-rLC" id="gOG-y0-W0F"/>
                         </connections>
@@ -739,19 +794,26 @@
                             <action selector="tabChanged:" target="Voe-Tx-rLC" id="LP8-9c-KCO"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="9DEE5E8B-A115-490B-829D-79EF12A97344" label="Attention" paletteLabel="Attention" tag="3" image="figure.wave" catalog="system" sizingBehavior="auto" selectable="YES" id="MlQ-6y-r6U">
+                        <connections>
+                            <action selector="tabChanged:" target="Voe-Tx-rLC" id="eRR-bR-ckm"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="Z6P-zv-YSL"/>
                     <toolbarItem reference="RSQ-cp-MMw"/>
                     <toolbarItem reference="7HX-By-d2j"/>
                     <toolbarItem reference="QKu-vA-qii"/>
+                    <toolbarItem reference="MlQ-6y-r6U"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="200" y="400"/>
+            <point key="canvasLocation" x="141.5" y="408"/>
         </window>
     </objects>
     <resources>
         <image name="figure.walk" catalog="system" width="13" height="17"/>
+        <image name="figure.wave" catalog="system" width="11" height="18"/>
         <image name="info.circle" catalog="system" width="15" height="15"/>
         <image name="photo" catalog="system" width="18" height="14"/>
         <image name="slider.horizontal.below.rectangle" catalog="system" width="16" height="14"/>

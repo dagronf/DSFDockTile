@@ -5,7 +5,9 @@
 //  Created by Darren Ford on 16/7/21.
 //
 
-import Cocoa
+import AppKit
+
+import DSFDockTile
 
 class NSInfoViewController: NSViewController {
 	override var nibName: NSNib.Name? {

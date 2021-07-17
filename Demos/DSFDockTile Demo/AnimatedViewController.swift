@@ -5,7 +5,9 @@
 //  Created by Darren Ford on 16/7/21.
 //
 
-import Cocoa
+import AppKit
+
+import DSFDockTile
 import DSFImageFlipbook
 
 class AnimatedViewController: NSViewController {
@@ -15,21 +17,21 @@ class AnimatedViewController: NSViewController {
 
 	@objc dynamic var speed: Double = 1.0
 
-	let dockTile: DSFDockTile = {
+	let dockTile: DSFDockTile.Animated = {
 		let fb = DSFImageFlipbook()
 		let da = NSDataAsset(name: NSDataAsset.Name("animate-shark"))!
 		_ = fb.loadFrames(from: da.data)
-		return DSFDockTile(fb)
+		return DSFDockTile.Animated(fb)
 	}()
 
-	let charizard: DSFDockTile = {
+	let charizard: DSFDockTile.Animated = {
 		let fb = DSFImageFlipbook()
 		let da = NSDataAsset(name: NSDataAsset.Name("animate-charizard"))!
 		_ = fb.loadFrames(from: da.data)
-		return DSFDockTile(fb)
+		return DSFDockTile.Animated(fb)
 	}()
 
-	lazy var selectedDockImage: DSFDockTile = {
+	lazy var selectedDockImage: DSFDockTile.Animated = {
 		dockTile
 	}()
 
@@ -51,7 +53,7 @@ class AnimatedViewController: NSViewController {
 	}
 
 	@IBAction func stopAnimatingAtEndOfLoop(_ sender: Any) {
-		selectedDockImage.flipbook?.animationDidComplete = { [unowned self] _ in
+		selectedDockImage.flipbook.animationDidComplete = { [unowned self] _ in
 			isAnimating = false
 		}
 		selectedDockImage.stopAnimating(stopAtEndOfCurrentLoop: true)
@@ -112,7 +114,7 @@ extension AnimatedViewController {
 		let fb = DSFImageFlipbook()
 		_ = fb.loadFrames(from: image)
 		if fb.frameCount > 0 {
-			selectedDockImage = DSFDockTile(fb)
+			selectedDockImage = DSFDockTile.Animated(fb)
 			selectedDockImage.display()
 		}
 	}

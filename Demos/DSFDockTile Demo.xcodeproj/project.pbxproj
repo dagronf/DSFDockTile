@@ -16,12 +16,13 @@
 		2321A56326A13E15003C94F8 /* AnimatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2321A56126A13E15003C94F8 /* AnimatedViewController.xib */; };
 		2321A56626A13E26003C94F8 /* XIBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A56426A13E26003C94F8 /* XIBViewController.swift */; };
 		2321A56726A13E26003C94F8 /* XIBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2321A56526A13E26003C94F8 /* XIBViewController.xib */; };
-		2321A56926A14001003C94F8 /* DSFDockTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A56826A14001003C94F8 /* DSFDockTile.swift */; };
 		2321A56F26A15194003C94F8 /* NSInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A56D26A15194003C94F8 /* NSInfoViewController.swift */; };
 		2321A57026A15194003C94F8 /* NSInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2321A56E26A15194003C94F8 /* NSInfoViewController.xib */; };
 		2321A57326A15299003C94F8 /* DockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2321A57126A15299003C94F8 /* DockViewController.xib */; };
 		2321A57426A15299003C94F8 /* DockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A57226A15299003C94F8 /* DockViewController.swift */; };
 		2321A57B26A16928003C94F8 /* DSFDockTile in Frameworks */ = {isa = PBXBuildFile; productRef = 2321A57A26A16928003C94F8 /* DSFDockTile */; };
+		235933D626A28D58002258AB /* AttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235933D426A28D58002258AB /* AttentionViewController.swift */; };
+		235933D726A28D58002258AB /* AttentionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235933D526A28D58002258AB /* AttentionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,12 +36,14 @@
 		2321A56126A13E15003C94F8 /* AnimatedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedViewController.xib; sourceTree = "<group>"; };
 		2321A56426A13E26003C94F8 /* XIBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBViewController.swift; sourceTree = "<group>"; };
 		2321A56526A13E26003C94F8 /* XIBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XIBViewController.xib; sourceTree = "<group>"; };
-		2321A56826A14001003C94F8 /* DSFDockTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSFDockTile.swift; sourceTree = "<group>"; };
 		2321A56D26A15194003C94F8 /* NSInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoViewController.swift; sourceTree = "<group>"; };
 		2321A56E26A15194003C94F8 /* NSInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NSInfoViewController.xib; sourceTree = "<group>"; };
 		2321A57126A15299003C94F8 /* DockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DockViewController.xib; sourceTree = "<group>"; };
 		2321A57226A15299003C94F8 /* DockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DockViewController.swift; sourceTree = "<group>"; };
 		2321A57826A1691C003C94F8 /* DSFDockTile */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DSFDockTile; path = ..; sourceTree = "<group>"; };
+		235933D426A28D58002258AB /* AttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionViewController.swift; sourceTree = "<group>"; };
+		235933D526A28D58002258AB /* AttentionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttentionViewController.xib; sourceTree = "<group>"; };
+		235933D826A29757002258AB /* DSFDockTile Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DSFDockTile Demo.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +79,8 @@
 		2321A54F26A13BF5003C94F8 /* DSFDockTile Demo */ = {
 			isa = PBXGroup;
 			children = (
+				235933D826A29757002258AB /* DSFDockTile Demo.entitlements */,
 				2321A55026A13BF5003C94F8 /* AppDelegate.swift */,
-				2321A56826A14001003C94F8 /* DSFDockTile.swift */,
 				2321A55226A13BF6003C94F8 /* Assets.xcassets */,
 				2321A55426A13BF6003C94F8 /* MainMenu.xib */,
 				2321A55C26A13E07003C94F8 /* ImageViewController.swift */,
@@ -90,6 +93,8 @@
 				2321A57126A15299003C94F8 /* DockViewController.xib */,
 				2321A56D26A15194003C94F8 /* NSInfoViewController.swift */,
 				2321A56E26A15194003C94F8 /* NSInfoViewController.xib */,
+				235933D426A28D58002258AB /* AttentionViewController.swift */,
+				235933D526A28D58002258AB /* AttentionViewController.xib */,
 			);
 			path = "DSFDockTile Demo";
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2321A56726A13E26003C94F8 /* XIBViewController.xib in Resources */,
+				235933D726A28D58002258AB /* AttentionViewController.xib in Resources */,
 				2321A57026A15194003C94F8 /* NSInfoViewController.xib in Resources */,
 				2321A57326A15299003C94F8 /* DockViewController.xib in Resources */,
 				2321A55326A13BF6003C94F8 /* Assets.xcassets in Resources */,
@@ -183,9 +189,9 @@
 			files = (
 				2321A56626A13E26003C94F8 /* XIBViewController.swift in Sources */,
 				2321A56F26A15194003C94F8 /* NSInfoViewController.swift in Sources */,
-				2321A56926A14001003C94F8 /* DSFDockTile.swift in Sources */,
 				2321A55E26A13E07003C94F8 /* ImageViewController.swift in Sources */,
 				2321A55126A13BF5003C94F8 /* AppDelegate.swift in Sources */,
+				235933D626A28D58002258AB /* AttentionViewController.swift in Sources */,
 				2321A57426A15299003C94F8 /* DockViewController.swift in Sources */,
 				2321A56226A13E15003C94F8 /* AnimatedViewController.swift in Sources */,
 			);
@@ -325,12 +331,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "DSFDockTile Demo/DSFDockTile Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3L6RK3LGGW;
 				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -354,12 +361,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "DSFDockTile Demo/DSFDockTile Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3L6RK3LGGW;
 				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";

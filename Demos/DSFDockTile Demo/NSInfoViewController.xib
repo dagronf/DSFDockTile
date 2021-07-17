@@ -17,14 +17,17 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="250"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="4b3-K3-xua">
+                <textField horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="4b3-K3-xua">
                     <rect key="frame" x="18" y="20" width="444" height="210"/>
-                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" id="1Gk-se-VKa">
+                    <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" id="1Gk-se-VKa">
                         <font key="font" metaFont="system"/>
-                        <mutableString key="title">This app demonstrates the different modes for DSFDockTile 
-Info: This text (which displays the Application Icon in the dock tile) Image: Set the docktile to a simple image
-Animated: Uses DSFImageFlipbook to generate an animated dock tile
-View: Using an NSViewController to control the content of the dock tile</mutableString>
+                        <mutableString key="title">This app demonstrates the different applications for DSFDockTile
+
+Info: This text (which displays the Application Icon in the docktile)
+Image: Set the docktile to a simple image
+Animated: Uses DSFImageFlipbook to generate an animated docktile
+View: Using an NSViewController to control the content of the docktile
+Attention: Draw attention to your application by bouncing the docktile</mutableString>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

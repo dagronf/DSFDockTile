@@ -6,13 +6,14 @@
 //
 
 import Cocoa
+import DSFDockTile
 
 class ImageViewController: NSViewController {
 	override var nibName: NSNib.Name? {
 		return NSNib.Name("ImageViewController")
 	}
 
-	let dockImage = DSFDockTile()
+	let dockImage = DSFDockTile.Image()
 
 	static let DefaultImage = NSImage(named: NSImage.Name("baby-shark"))!
 	@objc dynamic var image: NSImage = ImageViewController.DefaultImage {
@@ -21,17 +22,14 @@ class ImageViewController: NSViewController {
 		}
 	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do view setup here.
+	}
 
 	override func viewDidAppear() {
-		dockImage.display(image)
+		self.dockImage.display(self.image)
 	}
 
-	override func viewWillDisappear() {
-
-	}
-    
+	override func viewWillDisappear() {}
 }
