@@ -24,7 +24,7 @@
                             <rect key="frame" x="-2" y="81" width="444" height="180"/>
                             <textFieldCell key="cell" allowsUndo="NO" id="IHE-uC-Yfb">
                                 <font key="font" textStyle="body" name=".SFNS-Regular"/>
-                                <string key="title">You can 'bounce' an application icon in the dock.  The 'bounce' only occurs IF the application is not the focus application on the system.
+                                <string key="title">You can 'bounce' an application icon in the dock.  The 'bounce' only occurs IF the application is not the frontmost application on the system.
 
 To demonstrate this, clicking either of the two buttons below will open the 'System Preferences' application in order to de-focus this demo application.
 

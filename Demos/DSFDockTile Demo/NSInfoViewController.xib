@@ -14,30 +14,55 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="250"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="252"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="4b3-K3-xua">
-                    <rect key="frame" x="18" y="20" width="444" height="210"/>
-                    <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" id="1Gk-se-VKa">
-                        <font key="font" metaFont="system"/>
-                        <mutableString key="title">This app demonstrates the different applications for DSFDockTile
+                <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVQ-J9-MfH">
+                    <rect key="frame" x="20" y="20" width="440" height="212"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="4b3-K3-xua">
+                            <rect key="frame" x="-2" y="36" width="444" height="176"/>
+                            <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" id="1Gk-se-VKa">
+                                <font key="font" metaFont="system"/>
+                                <mutableString key="title">This app demonstrates the different applications for DSFDockTile
 
 Info: This text (which displays the Application Icon in the docktile)
 Image: Set the docktile to a simple image
 Animated: Uses DSFImageFlipbook to generate an animated docktile
 View: Using an NSViewController to control the content of the docktile
-Attention: Draw attention to your application by bouncing the docktile</mutableString>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+Attention: Draw attention to your application by bouncing the docktile
+
+You can also attach any window's docktile to DSFDocktile (by default, the DSFDockTile will attach itself to the Application docktile).  Click 'Open secondary window…' to present a window that demonstrates this.</mutableString>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HZJ-SS-hqm">
+                            <rect key="frame" x="124" y="-7" width="193" height="32"/>
+                            <buttonCell key="cell" type="push" title="Open secondary window…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sSN-FB-ysT">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="showSecondaryWindow:" target="-2" id="fe3-Bu-9Bi"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="4b3-K3-xua" secondAttribute="trailing" constant="20" symbolic="YES" id="JFm-xU-a1e"/>
-                <constraint firstAttribute="bottom" secondItem="4b3-K3-xua" secondAttribute="bottom" constant="20" symbolic="YES" id="Qtu-kg-MLL"/>
-                <constraint firstItem="4b3-K3-xua" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="uWL-iD-25O"/>
-                <constraint firstItem="4b3-K3-xua" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="yrv-DW-VUx"/>
+                <constraint firstItem="MVQ-J9-MfH" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="PZy-Ra-ufX"/>
+                <constraint firstAttribute="trailing" secondItem="MVQ-J9-MfH" secondAttribute="trailing" constant="20" symbolic="YES" id="QCc-fF-zfq"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MVQ-J9-MfH" secondAttribute="bottom" constant="20" symbolic="YES" id="emS-V2-jrM"/>
+                <constraint firstItem="MVQ-J9-MfH" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="vI4-G8-p8g"/>
             </constraints>
             <point key="canvasLocation" x="139" y="342"/>
         </customView>

@@ -24,4 +24,7 @@ class NSInfoViewController: NSViewController {
 		DSFDockTile.AppIcon.display()
 	}
 
+	@IBAction func showSecondaryWindow(_ sender: Any) {
+		OpenNewSubWindow()
+	}
 }

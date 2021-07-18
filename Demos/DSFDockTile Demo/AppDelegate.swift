@@ -33,10 +33,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	lazy var attentionTC: NSTabViewItem = { NSTabViewItem(viewController: attentionVC) }()
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Insert code here to initialize your application
-
-		OpenNewSubWindow()
-
 
 		tabView.addTabViewItem(infoTC)
 		tabView.addTabViewItem(imageTC)

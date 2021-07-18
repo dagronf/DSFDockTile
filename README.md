@@ -29,6 +29,12 @@ While the NSDockTile API isn't overly complex, I wanted something that made it e
 
 By default a `DSFDockTile` instance operates on the Application's docktile. You can provide your own `NSDockTile` for any window (by calling `window.dockTile`) via the `init` functions on the badge generators.
 
+## DockTile plugins
+
+Did you know that your application can show a custom DockTile image even when it's not running? Apple provides an `NSDockTilePlugin` prodocol that allows you to do exactly that. Want to provide different application icons for dark and light modes?  `NSDockTilePlugin` allows you to!  Want to tweak the dock icon when your application needs attention? `NSDockTilePlugin`!
+
+Here is the project I used to understand how to do this for my own project. [https://github.com/rrroyal/AutomaticDockTile](https://github.com/rrroyal/AutomaticDockTile)
+
 ## Integration
 
 ### Swift package manager

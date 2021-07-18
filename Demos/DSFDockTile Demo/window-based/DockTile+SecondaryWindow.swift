@@ -12,12 +12,13 @@ var windowedDockTileViewController: WindowedDockTileViewController?
 
 func OpenNewSubWindow() {
 
+	windowedDockTile?.close()
+
 	windowedDockTileViewController = WindowedDockTileViewController()
 
 	let w = NSWindow(contentViewController: windowedDockTileViewController!)
 	w.title = "Secondary Window DockTile Demo"
 	w.makeKeyAndOrderFront(nil)
-	w.resizeIncrements
 
 	windowedDockTile = w
 }
