@@ -1,6 +1,6 @@
 # DSFDockTile
 
-A helper wrapper around NSDockTile and docktile-related functions.
+Easily display images, animations, badges and alerts to your macOS application's dock icon.
 
 <p align="center">
     <img src="https://img.shields.io/github/v/tag/dagronf/DSFDockTile" />
@@ -17,8 +17,6 @@ A helper wrapper around NSDockTile and docktile-related functions.
 
 I was inspired by [Neil Sardesai](https://twitter.com/neilsardesai) after he posted [this on Twitter](https://twitter.com/neilsardesai/status/1362179114204073984?s=20). And this marvellous follow-up tweet by [Norbert M. Doerner](https://twitter.com/cdfinder/status/1365201157854015488?s=20).
 
-Reading some of the comments I realised that there seemed to be a lot of folks who weren't aware that there has been a DockTile API available through AppKit which allows you to play around with the docktile content.
-
 While the NSDockTile API isn't overly complex, I wanted something that made it easy to change the dock image, and even add basic animations from GIF images etc.
 
 ## Features
@@ -29,7 +27,7 @@ While the NSDockTile API isn't overly complex, I wanted something that made it e
 * Display the content of an NSView
 * Bounce the docktile 
 
-By default an `DSFDockTile` instance operates on the Application docktile. You can provide your own `NSDockTile` for any window (`window.dockTile`) via the `init` functions on the badge generators.
+By default a `DSFDockTile` instance operates on the Application's docktile. You can provide your own `NSDockTile` for any window (by calling `window.dockTile`) via the `init` functions on the badge generators.
 
 ## Integration
 
