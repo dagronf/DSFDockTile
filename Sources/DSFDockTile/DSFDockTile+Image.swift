@@ -54,7 +54,7 @@ extension DSFDockTile {
 
 		/// Set image as docktile
 		/// - Parameter cgImage: The image to display in the docktile
-		@inlinable func display(_ cgImage: CGImage) {
+		@inlinable public func display(_ cgImage: CGImage) {
 			self.display(NSImage(cgImage: cgImage, size: .zero))
 		}
 
