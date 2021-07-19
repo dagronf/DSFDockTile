@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DSFDockTile",
+        "repositoryURL": "https://github.com/dagronf/DSFDockTile",
+        "state": {
+          "branch": null,
+          "revision": "bb18b82cd3d64206eb322bd297f794b0a36dbf4d",
+          "version": "0.5.2"
+        }
+      },
+      {
+        "package": "DSFImageFlipbook",
+        "repositoryURL": "https://github.com/dagronf/DSFImageFlipbook",
+        "state": {
+          "branch": null,
+          "revision": "8b6e1e7f862c1d39ce34c59705f9fa731d9fd539",
+          "version": "1.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

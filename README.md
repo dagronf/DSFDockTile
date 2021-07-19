@@ -31,9 +31,9 @@ By default a `DSFDockTile` instance operates on the Application's docktile. You 
 
 ## DockTile plugins
 
-Did you know that your application can show a custom DockTile image even when it's not running? Apple provides an `NSDockTilePlugin` prodocol that allows you to do exactly that. Want to provide different application icons for dark and light modes?  `NSDockTilePlugin` allows you to!  Want to tweak the dock icon when your application needs attention? `NSDockTilePlugin`!
+Did you know that your application can show a custom DockTile image even when it's not running? Apple provides an `NSDockTilePlugin` prodocol that allows you to do exactly that. Want to provide different application icons for dark and light modes?  `NSDockTilePlugin` allows you to! Want to tweak the dock icon when your application isn't running, but needs attention? `NSDockTilePlugin`!
 
-Here is the project I used to understand how to do this for my own project. [https://github.com/rrroyal/AutomaticDockTile](https://github.com/rrroyal/AutomaticDockTile)
+There is a demo application in the `Demos` folder called **'DSFDockTile Plugin Demo'** (macOS 11+) that demonstrates using `NSDockTilePlugin` and `DSFDockIcon` in SwiftUI.
 
 ## Integration
 
@@ -196,6 +196,10 @@ See [Apple's Documentation](https://developer.apple.com/documentation/appkit/nsa
 
 * [Neil Sardesai](https://twitter.com/neilsardesai)
 * [Norbert M. Doerner](https://twitter.com/cdfinder)
+* The images (light/dark) in the demo application are thanks to [brgfx on freepix](https://www.freepik.com/free-vector/opposite-adjectives-light-dark_1172843.htm)
+  * Attribution - <a href="https://www.freepik.com/vectors/background">Background vector created by brgfx - www.freepik.com</a>
+
+* Here is the project I used to understand how to use `NSDockTilePlugin` for my own project. [https://github.com/rrroyal/AutomaticDockTile](https://github.com/rrroyal/AutomaticDockTile)
 
 ## License
 
