@@ -374,7 +374,7 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "DSFDockTile-Demo-Info.plist";
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_CFBundleExecutable = "DSFDockTile Demo";
 				INFOPLIST_KEY_CFBundleName = "DSFDockTile Demo";
 				INFOPLIST_KEY_CFBundleVersion = 1;
@@ -407,7 +407,7 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "DSFDockTile-Demo-Info.plist";
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_CFBundleExecutable = "DSFDockTile Demo";
 				INFOPLIST_KEY_CFBundleName = "DSFDockTile Demo";
 				INFOPLIST_KEY_CFBundleVersion = 1;
