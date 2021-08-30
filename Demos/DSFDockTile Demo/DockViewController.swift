@@ -17,7 +17,7 @@ class DockViewController: NSViewController {
 
 	@objc dynamic var value: Double = 0 {
 		didSet {
-			gradientArcView.endAngle = 360 * value
+			gradientArcView.endAngle = CGFloat(360 * value)
 		}
 	}
 
