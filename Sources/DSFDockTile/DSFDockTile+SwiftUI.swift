@@ -87,15 +87,15 @@ public struct DockTile: NSViewRepresentable {
 		self.label = label
 	}
 
-	public func makeNSView(context: Context) -> DockTileView {
-		let c = DockTileView()
+	public func makeNSView(context: Context) -> NSView {
+		let c = NSView()
 		c.translatesAutoresizingMaskIntoConstraints = false
 		c.widthAnchor.constraint(equalToConstant: 0).isActive = true
 		c.heightAnchor.constraint(equalToConstant: 0).isActive = true
 		return c
 	}
 
-	public func updateNSView(_ nsView: DockTileView, context: Context) {
+	public func updateNSView(_ nsView: NSView, context: Context) {
 		let which = (location == .window) ? nsView.window?.dockTile : NSApp?.dockTile
 
 		if let which = which {
@@ -112,14 +112,7 @@ public struct DockTile: NSViewRepresentable {
 		which?.badgeLabel = self.label
 	}
 
-	public final class DockTileView: NSView {
-		override public var intrinsicContentSize: NSSize { .zero }
-		override public func viewDidMoveToWindow() {
-			super.viewDidMoveToWindow()
-		}
-	}
-
-	public typealias NSViewType = DockTileView
+	public typealias NSViewType = NSView
 }
 
 #endif
