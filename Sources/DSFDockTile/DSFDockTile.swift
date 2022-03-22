@@ -45,4 +45,8 @@ public class DSFDockTile {
 	@inlinable public static func setBadgeLabel(_ label: String?, dockTile: NSDockTile = NSApp.dockTile) {
 		dockTile.badgeLabel = label
 	}
+
+	func reset() {
+		NSApp.dockTile.contentView = nil
+	}
 }

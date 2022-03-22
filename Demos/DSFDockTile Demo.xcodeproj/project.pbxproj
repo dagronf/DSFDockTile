@@ -21,6 +21,12 @@
 		2321A57326A15299003C94F8 /* DockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2321A57126A15299003C94F8 /* DockViewController.xib */; };
 		2321A57426A15299003C94F8 /* DockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A57226A15299003C94F8 /* DockViewController.swift */; };
 		2321A57B26A16928003C94F8 /* DSFDockTile in Frameworks */ = {isa = PBXBuildFile; productRef = 2321A57A26A16928003C94F8 /* DSFDockTile */; };
+		232B361A27E94C6E001679EB /* SwiftUI_docktile_demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232B361927E94C6E001679EB /* SwiftUI_docktile_demoApp.swift */; };
+		232B361C27E94C6E001679EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232B361B27E94C6E001679EB /* ContentView.swift */; };
+		232B361E27E94C6F001679EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232B361D27E94C6F001679EB /* Assets.xcassets */; };
+		232B362127E94C6F001679EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232B362027E94C6F001679EB /* Preview Assets.xcassets */; };
+		232B362727E94D33001679EB /* DockTileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232B362627E94D33001679EB /* DockTileContentView.swift */; };
+		232B362927E94E92001679EB /* DSFDockTile in Frameworks */ = {isa = PBXBuildFile; productRef = 232B362827E94E92001679EB /* DSFDockTile */; };
 		235933D626A28D58002258AB /* AttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235933D426A28D58002258AB /* AttentionViewController.swift */; };
 		235933D726A28D58002258AB /* AttentionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235933D526A28D58002258AB /* AttentionViewController.xib */; };
 		235933DD26A2AEF9002258AB /* DockTile+SecondaryWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235933DC26A2AEF9002258AB /* DockTile+SecondaryWindow.swift */; };
@@ -57,6 +63,13 @@
 		2321A57126A15299003C94F8 /* DockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DockViewController.xib; sourceTree = "<group>"; };
 		2321A57226A15299003C94F8 /* DockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DockViewController.swift; sourceTree = "<group>"; };
 		2321A57826A1691C003C94F8 /* DSFDockTile */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DSFDockTile; path = ..; sourceTree = "<group>"; };
+		232B361727E94C6E001679EB /* SwiftUI docktile demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI docktile demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		232B361927E94C6E001679EB /* SwiftUI_docktile_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_docktile_demoApp.swift; sourceTree = "<group>"; };
+		232B361B27E94C6E001679EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		232B361D27E94C6F001679EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		232B362027E94C6F001679EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		232B362227E94C6F001679EB /* SwiftUI_docktile_demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUI_docktile_demo.entitlements; sourceTree = "<group>"; };
+		232B362627E94D33001679EB /* DockTileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockTileContentView.swift; sourceTree = "<group>"; };
 		235933D426A28D58002258AB /* AttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionViewController.swift; sourceTree = "<group>"; };
 		235933D526A28D58002258AB /* AttentionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttentionViewController.xib; sourceTree = "<group>"; };
 		235933D826A29757002258AB /* DSFDockTile Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DSFDockTile Demo.entitlements"; sourceTree = "<group>"; };
@@ -74,6 +87,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		232B361427E94C6E001679EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				232B362927E94E92001679EB /* DSFDockTile in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +103,7 @@
 			children = (
 				2321A57826A1691C003C94F8 /* DSFDockTile */,
 				2321A54F26A13BF5003C94F8 /* DSFDockTile Demo */,
+				232B361827E94C6E001679EB /* SwiftUI docktile demo */,
 				2321A54E26A13BF5003C94F8 /* Products */,
 				2321A57926A16928003C94F8 /* Frameworks */,
 			);
@@ -91,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				2321A54D26A13BF5003C94F8 /* DSFDockTile Demo.app */,
+				232B361727E94C6E001679EB /* SwiftUI docktile demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +147,27 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		232B361827E94C6E001679EB /* SwiftUI docktile demo */ = {
+			isa = PBXGroup;
+			children = (
+				232B361927E94C6E001679EB /* SwiftUI_docktile_demoApp.swift */,
+				232B361B27E94C6E001679EB /* ContentView.swift */,
+				232B362627E94D33001679EB /* DockTileContentView.swift */,
+				232B361D27E94C6F001679EB /* Assets.xcassets */,
+				232B362227E94C6F001679EB /* SwiftUI_docktile_demo.entitlements */,
+				232B361F27E94C6F001679EB /* Preview Content */,
+			);
+			path = "SwiftUI docktile demo";
+			sourceTree = "<group>";
+		};
+		232B361F27E94C6F001679EB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				232B362027E94C6F001679EB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		235933D926A2AE68002258AB /* window-based */ = {
@@ -160,6 +204,26 @@
 			productReference = 2321A54D26A13BF5003C94F8 /* DSFDockTile Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		232B361627E94C6E001679EB /* SwiftUI docktile demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 232B362527E94C6F001679EB /* Build configuration list for PBXNativeTarget "SwiftUI docktile demo" */;
+			buildPhases = (
+				232B361327E94C6E001679EB /* Sources */,
+				232B361427E94C6E001679EB /* Frameworks */,
+				232B361527E94C6E001679EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftUI docktile demo";
+			packageProductDependencies = (
+				232B362827E94E92001679EB /* DSFDockTile */,
+			);
+			productName = "SwiftUI docktile demo";
+			productReference = 232B361727E94C6E001679EB /* SwiftUI docktile demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -167,11 +231,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					2321A54C26A13BF5003C94F8 = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					232B361627E94C6E001679EB = {
+						CreatedOnToolsVersion = 13.3;
 					};
 				};
 			};
@@ -191,6 +258,7 @@
 			projectRoot = "";
 			targets = (
 				2321A54C26A13BF5003C94F8 /* DSFDockTile Demo */,
+				232B361627E94C6E001679EB /* SwiftUI docktile demo */,
 			);
 		};
 /* End PBXProject section */
@@ -212,6 +280,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		232B361527E94C6E001679EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				232B362127E94C6F001679EB /* Preview Assets.xcassets in Resources */,
+				232B361E27E94C6F001679EB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -228,6 +305,16 @@
 				235933D626A28D58002258AB /* AttentionViewController.swift in Sources */,
 				2321A57426A15299003C94F8 /* DockViewController.swift in Sources */,
 				2321A56226A13E15003C94F8 /* AnimatedViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		232B361327E94C6E001679EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				232B362727E94D33001679EB /* DockTileContentView.swift in Sources */,
+				232B361C27E94C6E001679EB /* ContentView.swift in Sources */,
+				232B361A27E94C6E001679EB /* SwiftUI_docktile_demoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +513,64 @@
 			};
 			name = Release;
 		};
+		232B362327E94C6F001679EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = "SwiftUI docktile demo/SwiftUI_docktile_demo.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI docktile demo/Preview Content\"";
+				DEVELOPMENT_TEAM = 3L6RK3LGGW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dagronf.valuebinderdemos.pagedview.SwiftUI-docktile-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		232B362427E94C6F001679EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = "SwiftUI docktile demo/SwiftUI_docktile_demo.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI docktile demo/Preview Content\"";
+				DEVELOPMENT_TEAM = 3L6RK3LGGW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dagronf.valuebinderdemos.pagedview.SwiftUI-docktile-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -447,10 +592,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		232B362527E94C6F001679EB /* Build configuration list for PBXNativeTarget "SwiftUI docktile demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				232B362327E94C6F001679EB /* Debug */,
+				232B362427E94C6F001679EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		2321A57A26A16928003C94F8 /* DSFDockTile */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DSFDockTile;
+		};
+		232B362827E94E92001679EB /* DSFDockTile */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DSFDockTile;
 		};

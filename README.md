@@ -6,6 +6,7 @@ Easily display images, animations, badges and alerts to your macOS application's
     <img src="https://img.shields.io/github/v/tag/dagronf/DSFDockTile" />
     <img src="https://img.shields.io/badge/macOS-10.11+-red" />
     <img src="https://img.shields.io/badge/Swift-5.2-orange.svg" />
+    <img src="https://img.shields.io/badge/SwiftUI-1.0+-yellow.svg" />
     <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
     <a href="https://swift.org/package-manager">
         <img src="https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat" alt="Swift Package Manager" /></a>
@@ -156,6 +157,57 @@ let animatedDockTile: DSFDockTile.Animated = {
 }
 ```
 
+## SwiftUI 
+
+The `DockTile` view is used to manipulate the docktile for
+
+* The application (`.application`)
+* The window containing the `DockTile` View (`.window`)
+
+You can set which docktile you want to update in the initializer of the `DockTile` View 
+
+### Updating the badge
+
+To set a badge using SwiftUI, use the `DockTile` view and provide a label for the badge
+
+```swift
+@State var badgeLabel: String = ""
+var body: some Scene {
+   WindowGroup {
+      ZStack {
+         ContentView()
+         DockTile(label: badgeLabel)
+      }
+   }
+}
+```
+
+### Updating the content
+
+To set the content of a dock tile, provide a view to the initializer. Set to `nil` to return the docktile to its default. 
+
+```swift
+@State var dockText: String = ""
+var body: some Scene {
+   WindowGroup {
+      ZStack {
+         ContentView()
+         DockTile(
+            .window,
+            label: "3",
+            content: ZStack {
+               Color.white
+               Text(dockText)
+            }
+         )
+      }
+   }
+}
+```
+
+Remember that the DockTile API does not provide live docktile updating, and will require you to update the view for each 
+visual change you want to make
+
 ## Attention Concepts
 
 You can request user information via the DockTile of an application if your application is not the front-most application.
@@ -208,7 +260,7 @@ MIT. Use it and abuse it for anything you want, just attribute my work. Let me k
 ```
 MIT License
 
-Copyright (c) 2021 Darren Ford
+Copyright (c) 2022 Darren Ford
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
