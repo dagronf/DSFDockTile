@@ -30,9 +30,9 @@ import AppKit
 extension DSFDockTile {
 
 	/// Base type for a docktile. Can only be inherited from
-	public class BaseType {
+	public class Core {
 		// The docktile to update. By default, this is the App Icon
-		internal weak var dockTile: NSDockTile?
+		public weak var dockTile: NSDockTile?
 
 		/// Set the docktile badge label
 		public var badgeLabel: String? {
@@ -41,7 +41,7 @@ extension DSFDockTile {
 			}
 		}
 
-		internal init(dockTile: NSDockTile = NSApp.dockTile) {
+		internal init(dockTile: NSDockTile? = NSApp?.dockTile) {
 			self.dockTile = dockTile
 		}
 	}
@@ -49,9 +49,9 @@ extension DSFDockTile {
 
 extension DSFDockTile {
 	/// A docktile object that displays the default docktile content.
-	public class AppIconType: BaseType {
+	public class AppIconType: Core {
 
-		public override init(dockTile: NSDockTile = NSApp.dockTile) {
+		public override init(dockTile: NSDockTile? = NSApp?.dockTile) {
 			super.init(dockTile: dockTile)
 		}
 

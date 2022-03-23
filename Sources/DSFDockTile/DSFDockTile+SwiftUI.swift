@@ -30,7 +30,7 @@
 import SwiftUI
 
 /// The doctile to modify
-public enum DocTileLocation {
+public enum DockTileLocation {
 	/// The application's docktile
 	case application
 	/// The docktile for the window containing the `DockTile` view
@@ -62,18 +62,22 @@ public enum DocTileLocation {
 /// ```
 @available(macOS 10.15, *)
 public struct DockTile: NSViewRepresentable {
-	private let location: DocTileLocation
+	private let location: DockTileLocation
 	private let label: String
 	private let content: AnyView?
+	private let animation: DSFDockTile.Animated?
+	private let isAnimating: Bool
 
 	/// Create a docktile container
 	/// - Parameters:
 	///   - location: Which docktile to update (.application for the application docktile, .window for the docktile for the window containing the View)
 	///   - label: The label to apply to the docktile
-	public init(_ location: DocTileLocation = .application, label: String) {
+	public init(_ location: DockTileLocation = .application, label: String) {
 		self.content = nil
 		self.location = location
 		self.label = label
+		self.animation = nil
+		self.isAnimating = false
 	}
 
 	/// Create a docktile container
@@ -81,10 +85,12 @@ public struct DockTile: NSViewRepresentable {
 	///   - location: Which docktile to update (.application for the application docktile, .window for the docktile for the window containing the View)
 	///   - label: The label to apply to the docktile
 	///   - content: The content View to display in the docktile, or nil to restore the default doctile view
-	public init<ViewContentType: View>(_ which: DocTileLocation = .application, label: String = "", content: ViewContentType?) {
+	public init<ViewContentType: View>(_ which: DockTileLocation = .application, label: String = "", content: ViewContentType?) {
 		self.content = AnyView(content)
 		self.location = which
 		self.label = label
+		self.animation = nil
+		self.isAnimating = false
 	}
 
 	public func makeNSView(context: Context) -> NSView {
@@ -99,7 +105,18 @@ public struct DockTile: NSViewRepresentable {
 		let which = (location == .window) ? nsView.window?.dockTile : NSApp?.dockTile
 
 		if let which = which {
-			if let content = content {
+			if let animation = animation {
+				animation.dockTile = which
+				if self.isAnimating {
+					if animation.isAnimating == false {
+						animation.startAnimating()
+					}
+				}
+				else {
+					animation.stopAnimating(stopAtEndOfCurrentLoop: true)
+				}
+			}
+			else if let content = content {
 				let dockViewController = NSHostingController(rootView: content)
 				let dt = DSFDockTile.View(dockViewController, dockTile: which)
 				dt.display()
@@ -113,6 +130,24 @@ public struct DockTile: NSViewRepresentable {
 	}
 
 	public typealias NSViewType = NSView
+}
+
+// MARK: - Animation handling
+
+@available(macOS 10.15, *)
+extension DockTile {
+	public init(
+		_ location: DockTileLocation = .application,
+		label: String = "",
+		animation: DSFDockTile.Animated,
+		isAnimating: Bool
+	) {
+		self.animation = animation
+		self.label = label
+		self.content = nil
+		self.location = location
+		self.isAnimating = isAnimating
+	}
 }
 
 #endif

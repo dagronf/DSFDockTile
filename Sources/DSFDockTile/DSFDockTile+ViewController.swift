@@ -30,7 +30,7 @@ import AppKit
 extension DSFDockTile {
 
 	/// Display the content of a view as a dock tile
-	public class View: BaseType {
+	public class View: Core {
 
 		/// The view controller
 		internal weak var viewController: NSViewController?

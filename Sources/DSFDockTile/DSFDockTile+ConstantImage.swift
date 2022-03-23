@@ -30,7 +30,7 @@ import AppKit
 extension DSFDockTile {
 
 	/// A docktile object which displays a constant image
-	public class ConstantImage: BaseType {
+	public class ConstantImage: Core {
 
 		// Image settings
 		private let image: NSImage

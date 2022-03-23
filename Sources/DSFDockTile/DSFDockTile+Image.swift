@@ -30,7 +30,9 @@ import AppKit
 extension DSFDockTile {
 
 	/// A docktile with an updatable image
-	public class Image: BaseType {
+	public class Image: Core {
+
+		var image: NSImage?
 
 		// A lazy imageview to use when displaying images
 		private let _imageDisplayView: NSImageView = {
@@ -44,8 +46,8 @@ extension DSFDockTile {
 		/// - Parameters:
 		///   - image: (optional) The image to initially display when creating this instance
 		///   - dockTile: The docktile to update. By default, updates the application docktile.
-		public init(_ image: NSImage? = nil,	dockTile: NSDockTile = NSApp.dockTile) {
-			//self.image = image
+		public init(_ image: NSImage? = nil, dockTile: NSDockTile? = NSApp?.dockTile) {
+			self.image = image
 			super.init(dockTile: dockTile)
 			if let image = image {
 				self.display(image)
@@ -54,13 +56,22 @@ extension DSFDockTile {
 
 		/// Set image as docktile
 		/// - Parameter cgImage: The image to display in the docktile
-		@inlinable public func display(_ cgImage: CGImage) {
-			self.display(NSImage(cgImage: cgImage, size: .zero))
+		public func display(_ cgImage: CGImage) {
+			let i = NSImage(cgImage: cgImage, size: .zero)
+			self.image = i
+			self.display(i)
+		}
+
+		public func display() {
+			if let i = self.image {
+				self.display(i)
+			}
 		}
 
 		/// Set image as docktile
 		/// - Parameter nsImage: The image to display in the docktile
 		public func display(_ nsImage: NSImage) {
+			self.image = nsImage
 			precondition(Thread.isMainThread)
 
 			guard let tile = self.dockTile else {

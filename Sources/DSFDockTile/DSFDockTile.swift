@@ -42,8 +42,8 @@ public class DSFDockTile {
 	}
 
 	/// Set the badge label to be displayed on a provided docktile
-	@inlinable public static func setBadgeLabel(_ label: String?, dockTile: NSDockTile = NSApp.dockTile) {
-		dockTile.badgeLabel = label
+	@inlinable public static func setBadgeLabel(_ label: String?, dockTile: NSDockTile? = NSApp.dockTile) {
+		dockTile?.badgeLabel = label
 	}
 
 	func reset() {

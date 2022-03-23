@@ -39,18 +39,40 @@ extension DSFDockTile {
 		// Flipbook animation settings
 		fileprivate var stopAtEndOfCurrentLoop: Bool = false
 
+		/// Is the animation currently playing?
+		@inlinable public var isAnimating: Bool {
+			return flipbook.isAnimating()
+		}
+
 		/// Create a DockTile object presenting an animation
 		/// - Parameters:
 		///   - flipbook: The flipbook containing the image to present
 		///   - dockTile: The docktile to update
 		public init(_ flipbook: DSFImageFlipbook,
-						dockTile: NSDockTile = NSApp.dockTile) {
+						dockTile: NSDockTile? = NSApp?.dockTile) {
 			self.flipbook = flipbook
 			super.init(dockTile: dockTile)
 		}
 
+		/// Create a DockTile object presenting an animation from the raw data
+		/// - Parameters:
+		///   - flipbook: The image data for the animation (eg. a gif file)
+		///   - dockTile: The docktile to update
+		public init?(
+			animatedImageData: Data,
+			dockTile: NSDockTile? = NSApp?.dockTile)
+		{
+			let fb = DSFImageFlipbook()
+			_ = fb.loadFrames(from: animatedImageData)
+			guard fb.frameCount > 0 else {
+				return nil
+			}
+			self.flipbook = fb
+			super.init(dockTile: dockTile)
+		}
+
 		/// Display the first frame of the animation
-		public func display() {
+		public override func display() {
 			if let image = flipbook.frame(at: 0)?.image {
 				self.display(image)
 			}

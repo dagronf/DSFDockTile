@@ -7,22 +7,25 @@
 
 import SwiftUI
 import Combine
+import DSFDockTile
+
 
 struct ContentView: View {
 
+	@Binding var isAnimating: Bool
+
 	var body: some View {
-		HStack {
-			VStack {
-				Text("Hello there.")
-				Text("Try minimising this window to see a window docktile updating.")
-			}
-				.padding()
+		VStack(alignment: .leading, spacing: 8) {
+			Text("Example SwiftUI DockTile View demo.").font(.title)
+			Text("Try minimising this window to see a window docktile updating.")
+			Toggle("Animate window dock tile", isOn: $isAnimating)
 		}
+		.padding()
 	}
 }
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView()
+		ContentView(isAnimating: .constant(false))
 	}
 }
