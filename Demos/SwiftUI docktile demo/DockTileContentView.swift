@@ -20,7 +20,7 @@ struct DockTileContentView: View {
 				Text("\(percent)%")
 					.foregroundColor(.white).bold()
 					.font(Font.system(size: 30))
-					.shadow(color: .black, radius: 1, x: 1, y: 2)
+					.shadow(color: .black, radius: 1, x: 1, y: -2)
 					.frame(maxWidth: .infinity)
 					.background {
 						RoundedRectangle(cornerRadius: 16)
