@@ -1,33 +1,30 @@
-// swift-tools-version:5.2
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version: 5.4
 
 import PackageDescription
 
 let package = Package(
-    name: "DSFDockTile",
-	 platforms: [
-		 .macOS(.v10_12),
-	 ],
-    products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "DSFDockTile",
-            targets: ["DSFDockTile"]),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+	name: "DSFDockTile",
+	platforms: [
+		.macOS(.v10_13),
+	],
+	products: [
+		.library(
+			name: "DSFDockTile",
+			targets: ["DSFDockTile"]),
+	],
+	dependencies: [
 		.package(name: "DSFImageFlipbook", url: "https://github.com/dagronf/DSFImageFlipbook", from: Version(1, 0, 0))
-    ],
-    targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "DSFDockTile",
-				dependencies: ["DSFImageFlipbook"]
-			),
-        .testTarget(
-            name: "DSFDockTileTests",
-            dependencies: ["DSFDockTile"]),
-    ]
+	],
+	targets: [
+		.target(
+			name: "DSFDockTile",
+			dependencies: ["DSFImageFlipbook"],
+			resources: [
+				.copy("PrivacyInfo.xcprivacy"),
+			]
+		),
+		.testTarget(
+			name: "DSFDockTileTests",
+			dependencies: ["DSFDockTile"]),
+	]
 )
